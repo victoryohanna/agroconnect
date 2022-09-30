@@ -8,7 +8,7 @@ const Featured = ({product}) => {
       <div className='features__header-text'>
         <h1>Featured Categories</h1>
       </div>
-      <Link to="/">
+      <Link to="/products/111">
       <div className='features__gallary'>
         
          {product.map((item, index)=>{
