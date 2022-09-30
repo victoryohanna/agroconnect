@@ -1,0 +1,49 @@
+.a__navbar{
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    padding: 2rem 6rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background: #D5F3ED;
+
+    /* background:-moz-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
+    background:-webkit-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
+    background:-o-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
+    background:-ms-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
+    background:radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%); */
+}
+
+.a__navbar-logo img{
+    width: 62px;
+    height: 16px;
+}
+
+.a__navbar_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: flex-start;
+    width: 75%;
+    list-style: none;
+}
+
+.home,
+.about,
+.contact{
+    text-decoration: none;
+    font-size: 20px;
+    /* color: #ffffffff; */
+    padding: 10px 20px;
+    margin: 0 10px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.a__navbar-menu{
+    /* margin: 1rem; */
+    display: none;
+    position: relative;
+}
