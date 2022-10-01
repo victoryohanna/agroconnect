@@ -1,30 +1,35 @@
-import {img1, img2, img3, img4} from './index';
+import {img1, img2, img3, img4, 
+        grains, grains2, fruits, 
+        livestock, vegitable, vegitables,
+    tuber} from './index';
 
 const Products = [
     {
-        category : 'Category1',
-        image : img1
+        category : 'Cereal/Grain',
+        image : grains
     },
     {
-        category : 'Category2',
-        image : img2
+        category : 'Roots/Tuber',
+        image : tuber
     },
     {
-        category : 'Category3',
-        image : img3
+        category : 'Fruits',
+        image : fruits
     },
     {
-        category : 'Category2',
-        image : img2
+        category : 'Vegitable',
+        image : vegitables
     },
     {
-        category : 'Category3',
-        image : img3
+        category : 'Milk/Eggs',
+        image : vegitable
     },
     {
-        category : 'Category4',
-        image : img4
+        category : 'Livestock',
+        image : livestock
     }
 ]
 
 export default Products;
+
+

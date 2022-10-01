@@ -3,7 +3,11 @@
 
 const Products = ()=>{
     return(
-        <div className='products__container'>Products</div>
+        <div className='products__container'>
+            <div className="product__list">
+                <h1>Products</h1>
+            </div>
+        </div>
     )
 }
 
