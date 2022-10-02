@@ -49,12 +49,12 @@ const Navbar = () => {
             </ul>
             <ul className=" navbar-nav d-flex">
             <li className="nav-item me-2">
-                <Link to="login" className="nav-link">
+                <Link to="/login" className="nav-link">
                   Login
                 </Link>
               </li>
             <li className="nav-item me-2">
-                <Link to="register" className="nav-link">
+                <Link to="/farmer" className="nav-link">
                   Register
                 </Link>
               </li>

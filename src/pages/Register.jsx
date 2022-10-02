@@ -6,7 +6,7 @@ const Register = (props)=>{
     const form = props.form.name;
     return(
         
-        form === "LoginForm" ? <LoginForm/> : <RegistrationForm/>
+        form === "LoginForm" ? <LoginForm/> : <RegistrationForm/>   
     )
 }
 
