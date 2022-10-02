@@ -6,6 +6,8 @@
     width: 100%;
     margin-bottom: 1.5rem;
     background: #D5F3ED;
+    /* font-size: 20px; */
+    /* border: 1px solid black; */
 
     /* background:-moz-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
     background:-webkit-radial-gradient(circle at 3% 34%, rgba(5, 53, 123, 1) 0%, rgba(30, 107, 190, 1) 100%);
@@ -24,6 +26,13 @@
     flex-direction: row;
 }
 
+.nav-item{
+    font-size: 20px;
+    
+    padding: 10px 0px;
+    
+}
+
 .nav-links{
     display: flex;
     justify-content: flex-start;
@@ -33,13 +42,22 @@
 
 .home,
 .about,
-.contact{
+.contact,
+.nav-link{
     text-decoration: none;
     font-size: 20px;
     /* color: #ffffffff; */
     padding: 10px 20px;
     margin: 0 10px;
     /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.cont{
+    text-align: end;
+}
+
+a {
+    text-decoration: none;
 }
 
 .a__navbar-menu{
