@@ -3,13 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import "./styles/navbar.css";
 
-
-
 const Navbar = () => {
-
-//let {url} = useParams()
-
-
 
   return (
     <div className="">
@@ -42,7 +36,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/products/111" className="nav-link">
+                <Link to="/products" className="nav-link">
                   Products
                 </Link>
               </li>
@@ -54,7 +48,7 @@ const Navbar = () => {
                 </Link>
               </li>
             <li className="nav-item me-2">
-                <Link to="/farmer" className="nav-link">
+                <Link to="/dashboard" className="nav-link">
                   Register
                 </Link>
               </li>

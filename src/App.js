@@ -1,31 +1,34 @@
 
-
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from "./pages/Home"
-import Navbar from "./components/Navbar";
 import Products from './pages/Products';
 import Register from './pages/Register';
 import LoginForm from './components/elements/LoginForm';
-import RegistrationForm from './components/elements/RegistertrationForm';
+// import RegistrationForm from '../components/elements/RegistertrationForm';
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home"
+
 import FarmerDashboard from './pages/dashboard/Farmer';
-// 
+
 
 function App() { 
+
+  const [isLoggin, setIsLoggin] = useState(false);
+  
   return (
-    <div>
-      <Navbar />
+    isLoggin ?(<FarmerDashboard/>): (<div>
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products/:id' element={<Products />} />
-        <Route path='/register' element={<Register form={RegistrationForm}/>} />
-        <Route path='/login' element={<Register form={LoginForm}/>} />
-        <Route path='/farmer' element={<FarmerDashboard/>} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/login' element={<LoginForm />} />
       </Routes>
       
     
-    </div>
+    </div>)
   );
 }
 
