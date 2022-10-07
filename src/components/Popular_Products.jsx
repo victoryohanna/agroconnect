@@ -4,19 +4,23 @@ import "./styles/popular_products.css";
 
 const PopularProducts = ({popularproducts}) => {
   return (
-    <div className='popular__container'>
+    <div className='container'>
         
       <div className='popular__header-text'>
         <h1>Popular Products</h1>
       </div>
       <Link to="/" >
-      <div className='popular__gallary'>
+        <div className="row">
+        
+      <div className='popular__gallary d-flex'> 
         {
             popularproducts.map((item, index)=>{
                 return <img className="popular__img" src={item.image} key={index} alt={item.name} />
             })
         }
          
+     
+      </div>
       </div>
       </Link>
     </div>

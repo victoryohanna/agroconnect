@@ -2,7 +2,9 @@ const NewProduct = () => {
   return (
     <div className="card w-50 mx-auto">
       <div className="card-body">
+        <form>
         <div className="row">
+          
           <div className="col-7">
           <div className="col mt-3">
             <input
@@ -64,7 +66,9 @@ const NewProduct = () => {
                     
                   />
           </div>
+          
         </div>
+        </form>
         <div className="d-flex justify-content-end">
           <button type="button" className="btn btn-primary">Submit</button>
         </div>

@@ -1,10 +1,14 @@
 
-import NewProduct from "../../components/dashboard/Product";
+import NewProduct from "../../components/dashboard/AddProduct";
+import SideNavbar from "../../components/elements/SideNavbar";
+import QuickLink from "../../components/elements/DashboardView";
 
 const FarmerDashboard = () =>{
     return(
-        <div>
-            <NewProduct/>
+        <div className="container-fluid d-flex">
+            <SideNavbar/>
+            <QuickLink/>
+            {/* <NewProduct/> */}
         </div>
     )
 }
