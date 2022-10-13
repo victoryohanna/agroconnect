@@ -4,9 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Products from './pages/Products';
-import Register from './pages/Register';
+// import Register from './pages/Register';
 import LoginForm from './components/elements/LoginForm';
-// import RegistrationForm from '../components/elements/RegistertrationForm';
+import RegistrationForm from './components/elements/RegistertrationForm';
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
 
@@ -22,9 +22,10 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register />} />
+        {/* <Route path='/register' element={<Register />} /> */}
         <Route path='/products' element={<Products />} />
         <Route path='/login' element={<LoginForm />} />
+        <Route path='/register' element={<RegistrationForm/>}/>
       </Routes>
       
     
