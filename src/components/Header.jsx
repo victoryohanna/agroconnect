@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="container header__container">
       <div className="card header">
-        <div className="card-body ">
+        <div className="card-body card_body ">
           {/* <div className='header section__padding' id='hom'> */}
 
           <div className="header-text-section">

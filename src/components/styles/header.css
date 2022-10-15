@@ -7,7 +7,7 @@
   margin: auto;
 }
 
-.card-body {
+.card_body {
   display: flex;
   background: #d5f3ed;
   font-family: "Times New Roman", Times, serif;
