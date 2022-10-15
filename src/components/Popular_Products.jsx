@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./styles/popular_products.css"; 
+import "./styles/popular_products.css";  
 
 
 const PopularProducts = ({popularproducts}) => {
@@ -7,10 +7,10 @@ const PopularProducts = ({popularproducts}) => {
     <div className='container'>
         
       <div className='popular__header-text'>
-        <h1>Popular Products</h1>
+        <h3>Popular Products</h3>
       </div>
       <Link to="/" >
-        <div className="row">
+        <div className="row"> 
         
       <div className='popular__gallary d-flex'> 
         {
