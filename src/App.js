@@ -15,7 +15,7 @@ import FarmerDashboard from './pages/dashboard/Farmer';
 
 function App() { 
 
-  const [isLoggin, setIsLoggin] = useState(true);
+  const [isLoggin, setIsLoggin] = useState(false);
   
   return (
     isLoggin ?(<FarmerDashboard/>): (<div>

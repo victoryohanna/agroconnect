@@ -1,4 +1,4 @@
-
+import '../styles/login.css'
 import { useRef, useState, useEffect } from "react";
 
 const LoginForm = () => {
@@ -26,9 +26,9 @@ const LoginForm = () => {
 
 
   return (
-    <div className="card w-50 mx-auto">
-      <div className="card-body">
-        <form onSubmit={handleSubmit}>
+    <div className="card card-login">
+      <div className="card-body card_login">
+        <form className='form-main ' onSubmit={handleSubmit} >
           <div className="mb-1">
             <label htmlFor="inputEmail" className="form-label">
               Email Address
