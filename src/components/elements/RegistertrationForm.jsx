@@ -1,7 +1,9 @@
+import '../styles/regForm.css'
+
 const RegistrationForm = () => {
     return (
-      <div className="card w-50 mx-auto">
-        <div className="card-body">
+      <div className="card card_reg">
+        <div className="card-body card_reg-body">
           <form>
             <div className="mb-1">
               <label htmlFor="inputEmail" className="form-label">
