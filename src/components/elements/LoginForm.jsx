@@ -11,6 +11,14 @@ const LoginForm = () => {
   const [success, setSuccess] = useState(false);
   const [errmsg, setErrmsg] = useState('');
 
+  // const handleChange = (e)=>{
+  //   setUsername({
+  //     [e.target.name] : e.target.value
+  //   })
+
+  //   console.log(username)
+  // }
+
   const handleSubmit = (e)=>{
     e.preventDefault()
 
@@ -54,11 +62,7 @@ const LoginForm = () => {
               
             />
           </div>
-          {/* <div class="mb-3 form-check">
-    
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> */}
+          
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
