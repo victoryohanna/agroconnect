@@ -53,7 +53,7 @@ const QuickLink = () => {
         </div>
       </div>
       {/* <NewProduct/> */}
-      <ProductsList/>
+      {/* <ProductsList/> */}
     </div>
   );
 };

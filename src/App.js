@@ -8,14 +8,14 @@ import Products from './pages/Products';
 import LoginForm from './components/elements/LoginForm';
 import RegistrationForm from './components/elements/RegistertrationForm';
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 
 import FarmerDashboard from './pages/dashboard/Farmer';
 
 
 function App() { 
 
-  const [isLoggin, setIsLoggin] = useState(false);
+  const [isLoggin, setIsLoggin] = useState(true);
   
   return (
     isLoggin ?(<FarmerDashboard/>): (<div>
