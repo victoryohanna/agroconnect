@@ -11,13 +11,7 @@ const LoginForm = () => {
   const [success, setSuccess] = useState(false);
   const [errmsg, setErrmsg] = useState('');
 
-  // const handleChange = (e)=>{
-  //   setUsername({
-  //     [e.target.name] : e.target.value
-  //   })
-
-  //   console.log(username)
-  // }
+ 
 
   const handleSubmit = (e)=>{
     e.preventDefault()
@@ -63,9 +57,11 @@ const LoginForm = () => {
             />
           </div>
           
+          <div className='d-flex justify-content-end'>
           <button type="submit" className="btn btn-primary">
-            Submit
+            Login
           </button>
+          </div>
         </form>
       </div>
     </div>
