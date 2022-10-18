@@ -1,8 +1,11 @@
 
+import '../styles/productlist.css';
+
 const ProductsList = () =>{
     return(
-        <div className="card ">
-      <div className="card-body">
+        <div className='container-fluid px-4'>
+          <div className="card card-main">
+      <div className="card-body ">
       <div className="table-responsive-sm">
                 <table className="table">
                   <thead>
@@ -33,6 +36,7 @@ const ProductsList = () =>{
         
       </div>
     </div>
+        </div>
     )
 }
 

@@ -1,6 +1,7 @@
 const NewProduct = () => {
   return (
-    <div className="card w-50 mx-auto">
+    <div className="container-fluid px-4">
+      <div className="card">
       <div className="card-body">
         <form>
         <div className="row">
@@ -16,7 +17,7 @@ const NewProduct = () => {
           </div>
           <div className="col mt-3">
             <select className="form-select" aria-label="Default select example">
-              <option selected>Select Category</option>
+              <option defaultValue={0}>Select Category</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
@@ -74,6 +75,7 @@ const NewProduct = () => {
         </div>
         
       </div>
+    </div>
     </div>
   );
 };
