@@ -15,10 +15,14 @@ import FarmerDashboard from './pages/dashboard/Farmer';
 
 function App() { 
 
-  const [isLoggin, setIsLoggin] = useState(false);
+  const [isLoggin, setIsLoggin] = useState(true);
   
   return (
-    isLoggin ?(<FarmerDashboard/>): (<div>
+    isLoggin ?(
+      <Routes>
+        <Route path='/' element={<FarmerDashboard/>} />
+      </Routes>
+    ): (<div>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />

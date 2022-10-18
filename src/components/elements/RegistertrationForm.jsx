@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../styles/regForm.css'
+import '../styles/regForm.css';
 
 const RegistrationForm = () => {
 
@@ -8,10 +8,10 @@ const RegistrationForm = () => {
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
  
   const handleSubmit = (e)=>{
-    e.preventDefault()
+    e.preventDefault();
 
     console.log(fullName, phoneNumber, address, email, password);
 

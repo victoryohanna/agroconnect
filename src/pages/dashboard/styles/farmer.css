@@ -1,0 +1,17 @@
+.sidenav-container{
+    width: 12rem;
+    position: absolute;
+    /* border-right: 1px solid gray; */
+  background: #d5f3ed;
+    cursor: pointer;
+    
+}
+
+.links-section{
+    /* position: fixed; */
+    /* width: 70%; */
+    margin-left: 12rem;
+    /* border: 1px solid black; */
+
+}
+

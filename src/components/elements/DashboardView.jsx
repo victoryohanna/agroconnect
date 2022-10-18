@@ -2,12 +2,14 @@
 // import { Link } from "react-router-dom";
 import { FaGift, FaHandHolding, FaTruck, FaChartBar } from "react-icons/fa";
 
+import '../styles/dashbordview.css'
+
 import NewProduct from "../dashboard/AddProduct";
 import ProductsList from "../dashboard/ProductList";
 
 const QuickLink = () => { 
   return (
-    <div className="container-fluid px-4 border bg-b">
+    <div className="container-fluid px-4 main-body  bg-b">
       <div className="row g-3 my-2">
         <div className="col-md-3">
           <div className="p-3 d-flex bg-white shadow-sm justify-content-around align-items-center rounded border">

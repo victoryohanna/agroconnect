@@ -1,4 +1,5 @@
-//import {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
 import image from "../assets/images5.jpg";
 
 import PopularProducts from "../components/Popular_Products";
@@ -9,10 +10,21 @@ import Products from "../components/items";
 import "./styles/header.css";
 
 const Header = () => {
+
+  useEffect(
+    getProduct()
+  )
+
+  const getProduct = async ()=>{
+    await axios.get('/product').then(data=>{
+      console.log(data)
+    })
+  }
+
   return (
     <div className="container header__container">
       <div className="card header">
-        <div className="card-body card_body ">
+        <div className="card-body card_body ">  
           {/* <div className='header section__padding' id='hom'> */}
 
           <div className="header-text-section">
