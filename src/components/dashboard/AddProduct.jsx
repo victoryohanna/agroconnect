@@ -3,7 +3,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db } from "../../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-const NewProduct = () => {
+const NewProduct = () => {   
   const [file, setFile] = useState("");
   const [readFile, setReadFile] = useState("");
   const [per, setPer] = useState('');
