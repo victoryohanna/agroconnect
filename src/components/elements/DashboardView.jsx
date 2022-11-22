@@ -9,7 +9,7 @@ const QuickLink = () => {
     <div className="container-fluid px-4 main-body ">
       <div className="row g-3 my-2">
         <div className="col-md-3">
-          <div className="p-3 d-flex bg-white shadow-sm justify-content-around align-items-center rounded border">
+          <div className="p-4 d-flex shadow justify-content-around align-items-center rounded border dat">
             {/* <Link> */}
             <div>
                 
@@ -22,7 +22,7 @@ const QuickLink = () => {
         </div>
 
         <div className="col-md-3">
-          <div className="p-3 d-flex bg-white shadow-sm justify-content-around align-items-center rounded border">
+          <div className="p-4 d-flex  shadow justify-content-around align-items-center rounded border dat">
             <div>
               <h3 className="fs-2">6730</h3>
               <p className="fs-4">Sales</p>
@@ -32,7 +32,7 @@ const QuickLink = () => {
         </div>
 
         <div className="col-md-3">
-          <div className="p-3 d-flex bg-white shadow-sm justify-content-around align-items-center rounded border">
+          <div className="p-4 d-flex shadow justify-content-around align-items-center rounded border dat">
             <div>
               <h3 className="fs-2">3591</h3>
               <p className="fs-4">Delivery</p>
@@ -42,7 +42,7 @@ const QuickLink = () => {
         </div>
 
         <div className="col-md-3">
-          <div className="p-3 d-flex bg-white shadow-sm justify-content-around align-items-center rounded border">
+          <div className="p-4 d-flex  shadow justify-content-around align-items-center rounded border dat">
             <div> 
               <h3 className="fs-2">%25</h3>
               <p className="fs-4">Increase</p>

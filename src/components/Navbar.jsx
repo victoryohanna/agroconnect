@@ -1,11 +1,12 @@
 import React, { useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 
 import "./styles/navbar.css";
 
-const Navbar = () => {
+const Navbar = ({user}) => {
 
   return (
+
     <div className="">
       <nav className="navbar navbar-expand-lg a__navbar">
         <div className="container-fluid">
@@ -42,15 +43,11 @@ const Navbar = () => {
               </li>
             </ul>
             <ul className=" navbar-nav d-flex">
-            <li className="nav-item me-2">
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
+            {user}
             <li className="nav-item me-2">
                 <Link to="/register" className="nav-link"> 
                   Register
-                </Link>
+                </Link> 
               </li>
             </ul>
           </div>

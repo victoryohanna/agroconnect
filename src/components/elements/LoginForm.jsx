@@ -1,47 +1,59 @@
-import '../styles/login.css'
-import { useRef, useState, useEffect } from "react";
+import "../styles/login.css";
+import { useRef, useState, useEffect, useContext } from "react";
+import axios from "../../api/axios";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../../firebase";
+import {useNavigate} from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
 
 const LoginForm = () => {
 
-  const userRef = useRef();
-  const errRef = useRef();
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-  const [errmsg, setErrmsg] = useState('');
+  const [errmsg, setErrmsg] = useState(false);
+  const navigate = useNavigate()
 
- 
-
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-
-    console.log(username, password);
-
-    setUsername('')
-    setPassword('')
-
-    setSuccess(true)
-
-  }
+  const {dispatch} = useContext(AuthContext)
 
 
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        dispatch({type:"LOGIN", payload:user})
+        
+        navigate('/dashboard')
+      })
+      .catch((error) => {
+        setErrmsg(true)
+      });
+  };
 
   return (
-    <div className="card card-login">
-      <div className="card-body card_login">
-        <form className='form-main ' onSubmit={handleSubmit} >
+    <div className="card card_login ">
+      <div className="card-body login_body">
+        <form className="form-main " onSubmit={handleSubmit}>
+          {errmsg && (
+            <div className="error_section">
+              <span>Invalid email or password</span>
+            </div>
+          )}
+
           <div className="mb-1">
             <label htmlFor="inputEmail" className="form-label">
-              Email Address
+              Email Address 
             </label>
             <input
-              type="text"
+              type="email"
               className="form-control"
               id="inputEmail"
-              value={username}
-              onChange={(e)=>setUsername(e.target.value)}
-              />
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="mb-3">
             <label htmlFor="inputPassword1" className="form-label">
@@ -52,15 +64,14 @@ const LoginForm = () => {
               className="form-control"
               id="inputPassword1"
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}
-              
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          
-          <div className='d-flex justify-content-end'>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
+
+          <div className="d-flex justify-content-center">
+            <button type="submit" className="btn_login">
+              Login
+            </button>
           </div>
         </form>
       </div>

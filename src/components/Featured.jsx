@@ -12,10 +12,10 @@ const Featured = ({product}) => {
       
       {product.map((item, index)=>{
           return (
-            <div className=''>
+            <div className='' key={index}>
 
               <Link to="/">
-           <img className="pic" src={item.image} key={index} alt={item.name} />
+           <img className="pic" src={item.image}  alt={item.name} />
            <p className='name__category'>{item.category}</p></Link>
            </div>
            

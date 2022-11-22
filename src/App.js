@@ -1,39 +1,77 @@
+import { useState, useEffect, useContext } from "react";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+import "./App.css";
 
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-
-import Products from './pages/Products';
+import Products from "./pages/Products";
 // import Register from './pages/Register';
-import LoginForm from './components/elements/LoginForm';
-import RegistrationForm from './components/elements/RegistertrationForm';
+import LoginForm from "./components/elements/LoginForm";
+import RegistrationForm from "./components/elements/RegistertrationForm";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
-import FarmerDashboard from './pages/dashboard/Farmer';
+import FarmerDashboard from "./pages/dashboard/Farmer";
+import { AuthContext } from "./context/AuthContext";
 
+function App() {
+  const { isLoggin } = useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState();
 
-function App() { 
+  const ProtectedRoutes = ({ children }) => {
+    return isLoggin ? children : <Navigate to="/login" />;
+  };
 
-  const [isLoggin, setIsLoggin] = useState(false);
-  
+  const isLogout = ()=>{
+    return(
+      setCurrentUser(
+        <li className="nav-item me-2">
+            <Link to="/login" className="nav-link">  
+              Login
+            </Link>
+          </li>
+      )&&(
+        localStorage.removeItem('user')
+      )
+    )
+  }
+
+  const toggleUser = () => {
+    return isLoggin
+      ? setCurrentUser(
+          <li className="nav-item me-2 " onClick={isLogout}>
+            <Link to='/' className="nav-link">Logout</Link>
+          </li>
+        )
+      : setCurrentUser(
+          <li className="nav-item me-2">
+            <Link to="/login" className="nav-link">
+              Login
+            </Link>
+          </li>
+        );
+  };
+
+  useEffect(() => {
+    toggleUser();
+  }, [isLoggin]);
+
   return (
-    isLoggin ?(
+    <div>
+      <Navbar user={currentUser} />
       <Routes>
-        <Route path='/' element={<FarmerDashboard/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegistrationForm />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoutes>
+              <FarmerDashboard />
+            </ProtectedRoutes>
+          }
+        />
       </Routes>
-    ): (<div>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/register' element={<Register />} /> */}
-        <Route path='/products' element={<Products />} />
-        <Route path='/login' element={<LoginForm />} />
-        <Route path='/register' element={<RegistrationForm/>}/>
-      </Routes>
-      
-    
-    </div>)
+    </div>
   );
 }
 
