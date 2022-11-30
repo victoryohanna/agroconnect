@@ -13,7 +13,7 @@ const ProductsList = () => {
         console.log(doc.id, " => ", doc.data()); 
       });
     };
-    fetchData()
+    fetchData() 
   }, []);
   return (
     <div className="container-fluid px-4">
