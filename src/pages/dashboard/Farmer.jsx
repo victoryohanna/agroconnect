@@ -78,9 +78,9 @@ const FarmerDashboard = (props) => {
     </div>
     <div className="links-section">
     <QuickLink/>
-    {
+    {/* {
         productComponent?<NewProduct/> : <ProductsList/>
-    }
+    } */}
     
     </div>
     </>
