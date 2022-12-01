@@ -45,15 +45,14 @@ const ProductsList = () => {
                   <th>Sold</th>
                 </tr>
               </thead>
-
               <tbody>
                 {data.map((item, i)=>{
                   return(
-                    <tr>
+                    <tr key={item.id}>
                       <td className="table-row">
                         <img src={item.data.imageUrl} alt={item.data.productName} />
                       </td>
-                  <td className="table-row">{item.data.productName}</td>
+                  <td className="table-row">{item.data.productName}</td> 
                   <td className="table-row"></td>
                   <td className="table-row"></td>
                   <td className="table-row">{item.data.quantity}</td>
