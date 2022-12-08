@@ -9,7 +9,7 @@ const ProductsList = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => {    
 
       let list = []
       const querySnapshot = await getDocs(collection(db, "products"));
@@ -40,9 +40,9 @@ const ProductsList = () => {
                   <th></th>
                   <th>Product Name</th> 
                   <th>Category</th>
-                  <th>Date</th>
                   <th>Quantity</th>
-                  <th>Sold</th>
+                  <th>Date</th>
+                  {/* <th>Sold</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -53,10 +53,10 @@ const ProductsList = () => {
                         <img src={item.data.imageUrl} alt={item.data.productName} />
                       </td>
                   <td className="table-row">{item.data.productName}</td> 
-                  <td className="table-row"></td>
-                  <td className="table-row"></td>
+                  <td className="table-row">{item.data.category}</td>
                   <td className="table-row">{item.data.quantity}</td>
                   <td className="table-row"></td>
+                  {/* <td className="table-row"></td> */}
                 </tr>
                   )
                 })}

@@ -77,10 +77,10 @@ const FarmerDashboard = (props) => {
       </div>
     </div>
     <div className="links-section">
-    <QuickLink/>
-    {/* {
+    {/* <QuickLink/> */}
+    {
         productComponent?<NewProduct/> : <ProductsList/>
-    } */}
+    }
     
     </div>
     </>

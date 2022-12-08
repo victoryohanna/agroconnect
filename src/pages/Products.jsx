@@ -1,12 +1,11 @@
 
 //import './styles/products.css';
+import ProductCategory from "../components/elements/ProductCategory";
 
 const Products = ()=>{
     return(
         <div className='products__container'>
-            <div className="product__list">
-                <h1>Products</h1>
-            </div>
+            <ProductCategory/>
         </div>
     )
 }

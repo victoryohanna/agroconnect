@@ -53,7 +53,6 @@ const Header = () => {
           {/* </div> */}
         </div>
       </div>
-
       <div className="container d-flex ">
         <Featured product={Products} />
       </div>
