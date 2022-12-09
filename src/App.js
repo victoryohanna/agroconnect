@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { Routes, Route, Navigate, Link } from "react-router-dom";
+import { Routes, Route, Navigate, Link, Outlet } from "react-router-dom";
 import "./App.css";
 
 import Products from "./pages/Products";
@@ -8,6 +8,8 @@ import LoginForm from "./components/elements/LoginForm";
 import RegistrationForm from "./components/elements/RegistertrationForm";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+
+import ProductCategory from "./components/elements/ProductCategory";
 
 import FarmerDashboard from "./pages/dashboard/Farmer";
 import { AuthContext } from "./context/AuthContext";
@@ -59,7 +61,9 @@ function App() {
       <Navbar user={currentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Products />} >
+          <Route path=":id" element={<ProductCategory/>}/>
+        </Route> 
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route

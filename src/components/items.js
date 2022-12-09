@@ -5,27 +5,27 @@ import {img1, img2, img3, img4,
 
 const Products = [
     {
-        category : 'Cereal/Grain',
+        category : 'grains',
         image : grains
     },
     {
-        category : 'Roots/Tuber',
+        category : 'tubers',
         image : tuber
     },
     {
-        category : 'Fruits',
+        category : 'fruits',
         image : fruits
     },
     {
-        category : 'Vegitable',
+        category : 'vegitables',
         image : vegitables
     },
     {
-        category : 'Milk/Eggs',
+        category : 'eggs',
         image : vegitable
     },
     {
-        category : 'Livestock',
+        category : 'livestock',
         image : livestock
     }
 ]

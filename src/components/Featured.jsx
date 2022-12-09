@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./styles/featured.css";
 
-const Featured = ({ product }) => {
+const Featured = ({ product}) => {
+  
   return (
     <div className="container">
       <div className="popular__header-text">
@@ -11,7 +12,7 @@ const Featured = ({ product }) => {
         {product.map((item, index) => {
           return (
             <div className="" key={index}>
-              <Link to="/products">
+              <Link to={`/products/${item.category}`}>
                 <img className="pic" src={item.image} alt={item.name} />
                 <p className="name__category">{item.category}</p>
               </Link>

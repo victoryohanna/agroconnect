@@ -11,10 +11,6 @@ import "./styles/header.css";
 
 const Header = () => {
 
-  // useEffect(
-  //   getProduct()
-  // )
-
   const getProduct = async ()=>{
     await axios.get('/product').then(data=>{
       console.log(data)
