@@ -16,8 +16,7 @@ const ProductsList = () => {
       querySnapshot.forEach((doc) => {
 
        list.push({id: doc.id, ...doc.data()})
-        // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, " => ", doc.data()); 
+        
       });
 
       setData(list)
@@ -26,8 +25,6 @@ const ProductsList = () => {
     
     fetchData() 
   }, []);
-
-  console.log(data)
   
   return (
     <div className="container-fluid px-4">
@@ -50,11 +47,11 @@ const ProductsList = () => {
                   return(
                     <tr key={item.id}>
                       <td className="table-row">
-                        <img src={item.data.imageUrl} alt={item.data.productName} />
+                        <img src={item.imageUrl} alt={item.productName} />
                       </td>
-                  <td className="table-row">{item.data.productName}</td> 
-                  <td className="table-row">{item.data.category}</td>
-                  <td className="table-row">{item.data.quantity}</td>
+                  <td className="table-row">{item.productName}</td> 
+                  <td className="table-row">{item.category}</td>
+                  <td className="table-row">{item.quantity}</td>
                   <td className="table-row"></td>
                   {/* <td className="table-row"></td> */}
                 </tr>

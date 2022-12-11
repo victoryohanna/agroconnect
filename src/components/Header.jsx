@@ -11,11 +11,11 @@ import "./styles/header.css";
 
 const Header = () => {
 
-  const getProduct = async ()=>{
-    await axios.get('/product').then(data=>{
-      console.log(data)
-    })
-  }
+  // const getProduct = async ()=>{
+  //   await axios.get('/product').then(data=>{
+  //     console.log(data)
+  //   })
+  // }
 
   return (
     <div className="container header__container">

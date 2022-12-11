@@ -7,7 +7,7 @@ import { getStorage } from "firebase/storage";
 // require('dotenv').config();
 
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
+  apiKey: "AIzaSyB4v7X9f8mOqRj9WJpqkS1hrLwMkvfEc2w",
   authDomain: "agroconnect-3ccde.firebaseapp.com",
   projectId: "agroconnect-3ccde",
   storageBucket: "agroconnect-3ccde.appspot.com",

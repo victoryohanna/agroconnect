@@ -31,19 +31,17 @@ const NewProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const product = {
-      productName,
-      imageUrl,
-      quantity,
-      price,
-      description,
-      location,
-      category,
-    };
+    
 
     try {
       const res = await addDoc(collection(db, "products"), {
-        data: product,
+        productName,
+        imageUrl,
+        quantity,
+        price,
+        description,
+        location,
+        category,
         timeStamp: serverTimestamp(),
       });
 
@@ -89,7 +87,7 @@ const NewProduct = () => {
             setImageUrl(downloadURL);
           });
 
-          console.log(imageUrl)
+          // console.log(imageUrl)
         }
       );
     };
@@ -97,7 +95,7 @@ const NewProduct = () => {
     file && uploadFile();
   }, [file]);
 
-  const productCategory = ["Cereal/Grains", "Root/Tuber", "Fruits", "Vegitable", "Livestucks"]
+  const productCategory = ["grains", "tuber", "fruits", "vegitable", "livestucks"]
   return (
     <div className="container-fluid px-4">
       <div className="card">
