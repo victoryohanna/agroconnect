@@ -1,5 +1,3 @@
-
-
 // import Navbar from "../components/Navbar";
 // import Products from '../pages/Products';
 // import Register from '../pages/Register';
@@ -8,16 +6,12 @@
 
 import Header from "../components/Header";
 
-const Home = ()=>{
-  
-  return(
+const Home = () => {
+  return (
     <div className="con">
-      
-      <Header/>
-     
+      <Header />
     </div>
-  )
-}
+  );
+};
 
-export default Home
-
+export default Home;
