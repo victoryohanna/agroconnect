@@ -44,11 +44,6 @@ const NewProduct = () => {
         category,
         timeStamp: serverTimestamp(),
       });
-
-      console.log(res.id);
-      // .then((response)=>{
-      //   console.log("This : " + response)
-      // });
     } catch (error) {
       console.log(error);
     }
@@ -86,8 +81,6 @@ const NewProduct = () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setImageUrl(downloadURL);
           });
-
-          // console.log(imageUrl)
         }
       );
     };
