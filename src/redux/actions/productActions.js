@@ -1,7 +1,7 @@
 
 import { ADD_PRODUCT } from "./productTypes"
 
-export const addPrduct = () =>{
+export const addProduct = () =>{
     return{
         type: ADD_PRODUCT
     }
