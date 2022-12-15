@@ -8,12 +8,9 @@ import ProductCategory from "../components/elements/ProductCategory";
 const Products = () => {
   const [products, setProducts] = useState([]);
  
- 
   const queryParameter = useParams();
    let product = [];
   const category = queryParameter.id;
-  
-
   
   useEffect(() => {
 
@@ -61,21 +58,20 @@ const Products = () => {
           const querySnapshot5 = await getDocs(querObj5);
           querySnapshot5.forEach((doc) => {
             product.push({ id: doc.id, ...doc.data() });
-          });
+          }); 
           break;
         case "eggs":
           const querObj6 = query(productsRef, where("category", "==", "eggs"));
-          const querySnapshot6 = await getDocs(querObj6);
+          const querySnapshot6 = await getDocs(querObj6); 
           querySnapshot6.forEach((doc) => {
             product.push({ id: doc.id, ...doc.data()});
           });
           break;
         default:
-          // console.log("Not Found")
           break;
       }
       
-    setProducts(product)
+    setProducts(product) 
     };
     getCategory();
   },[]);

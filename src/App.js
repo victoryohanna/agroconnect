@@ -13,6 +13,7 @@ import ProductCategory from "./components/elements/ProductCategory";
 
 import FarmerDashboard from "./pages/dashboard/Farmer";
 import { AuthContext } from "./context/AuthContext";
+import ProductDetail from "./components/elements/ProductDetails";
 
 function App() {
   const { isLoggin } = useContext(AuthContext);
@@ -22,25 +23,25 @@ function App() {
     return isLoggin ? children : <Navigate to="/login" />;
   };
 
-  const isLogout = ()=>{
-    return(
+  const isLogout = () => {
+    return (
       setCurrentUser(
         <li className="nav-item me-2">
-            <Link to="/login" className="nav-link">  
-              Login
-            </Link>
-          </li>
-      )&&(
-        localStorage.removeItem('user')
-      )
-    )
-  }
+          <Link to="/login" className="nav-link">
+            Login
+          </Link>
+        </li>
+      ) && localStorage.removeItem("user")
+    );
+  };
 
   const toggleUser = () => {
     return isLoggin
       ? setCurrentUser(
           <li className="nav-item me-2 " onClick={isLogout}>
-            <Link to='/' className="nav-link">Logout</Link>
+            <Link to="/" className="nav-link">
+              Logout
+            </Link>
           </li>
         )
       : setCurrentUser(
@@ -60,10 +61,11 @@ function App() {
     <div>
       <Navbar user={currentUser} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} >
-          <Route path=":id" element={<ProductCategory/>}/>
-        </Route> 
+        <Route path="/" element={<Home />}/>
+        <Route path="/products" element={<Products />}>
+          <Route path=":id" element={<ProductCategory />}/>  
+        </Route>
+        <Route path=":id" element={<ProductDetail />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegistrationForm />} />
         <Route
