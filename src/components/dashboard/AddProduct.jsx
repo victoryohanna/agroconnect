@@ -21,7 +21,7 @@ const NewProduct = () => {
 
     const reader = new FileReader();
     reader.onload = (e) => {
-      if (reader.readyState === 2) {
+      if (reader.readyState === 2) { 
         setReadFile(reader.result);
       }
     };
