@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import "../styles/productlist.css";
+import "../styles/productlist.css"; 
 
 const ProductsList = () => {
 
@@ -15,8 +15,8 @@ const ProductsList = () => {
       const querySnapshot = await getDocs(collection(db, "products"));
       querySnapshot.forEach((doc) => {
 
-       list.push({id: doc.id, ...doc.data()})
-        
+       list.push({id: doc.id, ...doc.data()})  
+
       });
 
       setData(list)
