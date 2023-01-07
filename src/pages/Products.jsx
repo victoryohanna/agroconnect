@@ -2,16 +2,22 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import { useDispatch } from "react-redux";
 //import './styles/products.css';
-import ProductCategory from "../components/elements/ProductCategory";
+import ProductCategory from "../components/elements/ProductCategory";  
+import { productsAction } from "../redux/slice/products-slice";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
  
+  //when product component mounts, update the store with the list of products 
+  //recieved from the server
+
   const queryParameter = useParams();
    let product = [];
   const category = queryParameter.id;
-  
+  const dispatch = useDispatch()
+
   useEffect(() => {
 
     const getCategory = async () => { 
@@ -25,7 +31,7 @@ const Products = () => {
             // setProducts(product)
           });
           
-          break;
+          break;  
         case "tubers":
           const querObj2 = query(productsRef, where("category", "==", "tuber"));
           const querySnapshot2 = await getDocs(querObj2);
@@ -62,7 +68,7 @@ const Products = () => {
           break;
         case "eggs":
           const querObj6 = query(productsRef, where("category", "==", "eggs"));
-          const querySnapshot6 = await getDocs(querObj6); 
+          const querySnapshot6 = await getDocs(querObj6);   
           querySnapshot6.forEach((doc) => {
             product.push({ id: doc.id, ...doc.data()});
           });
@@ -71,7 +77,9 @@ const Products = () => {
           break;
       }
       
-    setProducts(product) 
+    setProducts(product);
+    dispatch(productsAction.getProducts(product))
+     
     };
     getCategory();
   },[]);

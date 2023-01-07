@@ -1,22 +1,25 @@
 import { useState, useEffect, useContext } from "react";
 import { Routes, Route, Navigate, Link, Outlet } from "react-router-dom";
+import {useSelector} from 'react-redux';
 import "./App.css";
 
 import Products from "./pages/Products";
 // import Register from './pages/Register';
 import LoginForm from "./components/elements/LoginForm";
 import RegistrationForm from "./components/elements/RegistertrationForm";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+import Navbar from "./components/Navbar"; 
+import Home from "./pages/Home"; 
 
 import ProductCategory from "./components/elements/ProductCategory";
 
 import FarmerDashboard from "./pages/dashboard/Farmer";
-import { AuthContext } from "./context/AuthContext";
+//import { AuthContext } from "./context/AuthContext";
 import ProductDetail from "./components/elements/ProductDetails";
 
 function App() {
-  const { isLoggin } = useContext(AuthContext);
+  
+  const isLoggin = useSelector((state)=>state.auth.isLoggin)
+  //const { isloggin } = useContext(AuthContext);
   const [currentUser, setCurrentUser] = useState();
 
   const ProtectedRoutes = ({ children }) => {
@@ -62,7 +65,7 @@ function App() {
       <Navbar user={currentUser} />
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/products" element={<Products />}>
+        <Route path="/products" element={<Products />}> 
           <Route path=":id" element={<ProductCategory />}/>  
         </Route>
         <Route path=":id" element={<ProductDetail />} />
@@ -79,6 +82,7 @@ function App() {
       </Routes>
     </div>
   );
+  
 }
 
 export default App;
