@@ -4,7 +4,7 @@ const ProductCategory = ({ products }) => {
   return (
     <div className="container">
       {/* render category name from global state */}  
-      <h1>Prodcut Category</h1>
+      <h1>Product Category</h1>
       <div className="row">
         {products.map((item, index) => { 
           return (
