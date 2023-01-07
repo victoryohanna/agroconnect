@@ -1,35 +1,36 @@
 import "../styles/login.css";
-import { useRef, useState, useEffect, useContext } from "react";
-import axios from "../../api/axios";
+import {  useState, } from "react";
+import { useDispatch } from "react-redux";
+//import axios from "../../api/axios";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../../firebase";
-import {useNavigate} from 'react-router-dom';
-import { AuthContext } from "../../context/AuthContext";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
+//import { AuthContext } from "../../context/AuthContext";
+import { authActions } from "../../redux/slice/auth-slice";
 
 const LoginForm = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [errmsg, setErrmsg] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const {dispatch} = useContext(AuthContext)
-
+  //const {dispatch} = useContext(AuthContext)
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        dispatch({type:"LOGIN", payload:user})
-        
-        navigate('/dashboard')
+
+        dispatch(authActions.login(user.uid));
+        navigate("/dashboard");
       })
       .catch((error) => {
-        setErrmsg(true)
+        setErrmsg(true);
       });
   };
 
@@ -45,7 +46,7 @@ const LoginForm = () => {
 
           <div className="mb-1">
             <label htmlFor="inputEmail" className="form-label">
-              Email Address 
+              Email Address
             </label>
             <input
               type="email"
